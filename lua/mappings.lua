@@ -29,6 +29,23 @@ map("n", "<leader>X", function()
   require("nvchad.tabufline").closeAllBufs()
 end, { desc = "buffer close ALL" })
 
+-- LSP config
+map("n", "<leader>lf", function()
+  vim.diagnostic.open_float { border = "rounded" }
+end, { desc = "LSP Floating diagnostic" })
+map("n", "<leader>lh", function()
+  vim.lsp.buf.hover()
+end, { desc = "LSP Hover Symbol Information" })
+map("n", "<leader>li", function()
+  vim.lsp.buf.implementation()
+end, { desc = "LSP Implementation List" })
+map("n", "<leader>lc", function()
+  vim.lsp.buf.incoming_calls()
+end, { desc = "LSP Call List" })
+map("n", "<leader>lr", function()
+  vim.lsp.buf.references()
+end, { desc = "LSP Reference List" })
+
 -- Debugger
 map("n", "<F5>", function()
   require "dapui" -- Trigger lazy load
