@@ -38,6 +38,7 @@ local plugins = {
     config = function()
       require "configs.lspconfig"
     end,
+    dependencies = { "folke/neoconf.nvim" },
   },
   {
     "williamboman/mason.nvim",
@@ -202,6 +203,15 @@ local plugins = {
       "BufRead *.cs",
       "BufNewFile *.cs",
     },
+  },
+
+  -- neoconf
+  {
+    "folke/neoconf.nvim",
+    cmd = {
+      "Neoconf",
+    },
+    opts = {},
   },
 }
 
