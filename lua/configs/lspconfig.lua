@@ -8,7 +8,7 @@ local lspconfig = require "lspconfig"
 -- Add LSP servers here if using default configuration, just a simple string,
 -- e.g. "pyright". Use complete configuration if using separate settings.
 local servers = {
-  "gopls"
+  "gopls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -34,7 +34,7 @@ lspconfig.rust_analyzer.setup {
         },
       },
     },
-  }
+  },
 }
 
 lspconfig.ansiblels.setup {
@@ -56,12 +56,11 @@ lspconfig.pyright.setup {
     python = {
       analysis = {
         typeCheckingMode = "off",
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 lspconfig.omnisharp.setup {
   cmd = { "dotnet", "/home/flozza/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
-
 }

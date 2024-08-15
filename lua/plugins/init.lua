@@ -22,7 +22,7 @@ local plugins = {
         telescope.load_extension(ext)
       end
 
-      telescope.load_extension("ui-select")
+      telescope.load_extension "ui-select"
     end,
   },
 
@@ -71,7 +71,7 @@ local plugins = {
         -- Customize or remove this keymap to your liking
         "<leader>fm",
         function()
-          require("conform").format({ async = true, lsp_fallback = true })
+          require("conform").format { async = true, lsp_fallback = true }
         end,
         mode = "",
         desc = "Format buffer",
@@ -88,10 +88,10 @@ local plugins = {
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
@@ -111,7 +111,9 @@ local plugins = {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
@@ -121,12 +123,12 @@ local plugins = {
     config = function()
       -- Configure look of breakpoints in sign sidebar
       -- Needs a nerd font or similar
-      vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint' })
-      vim.fn.sign_define('DapBreakpointCondition', { text = '', texthl = 'DapBreakpoint' })
-      vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint' })
-      vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStoppedLine' })
-      vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DapBreakpoint' })
-    end
+      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
+      vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpoint" })
+      vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint" })
+      vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStoppedLine" })
+      vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpoint" })
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -135,7 +137,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
     },
     config = function()
-      local dap, dapui = require("dap"), require("dapui")
+      local dap, dapui = require "dap", require "dapui"
       dapui.setup()
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
@@ -149,7 +151,7 @@ local plugins = {
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
       end
-    end
+    end,
   },
 
   -- Python
@@ -164,7 +166,7 @@ local plugins = {
       "rcarriga/nvim-dap-ui",
     },
     config = function()
-      require('dap-python').setup('/home/flozza/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+      require("dap-python").setup "/home/flozza/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       -- Try to parse a `.vscode/launch.json` if it exists
       local ftmap = {
         debugpy = { "python" },
@@ -182,7 +184,7 @@ local plugins = {
       "rcarriga/nvim-dap-ui",
     },
     config = function()
-      require('dap-go').setup()
+      require("dap-go").setup()
     end,
   },
 

@@ -22,6 +22,6 @@ local options = {
 
     -- Bazel
     "starlark",
-  }
+  },
 }
 return options
