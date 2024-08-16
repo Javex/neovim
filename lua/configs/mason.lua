@@ -24,6 +24,9 @@ local options = {
 
     -- HTML
     "djlint",
+
+    -- C++
+    "clangd",
   },
 }
 

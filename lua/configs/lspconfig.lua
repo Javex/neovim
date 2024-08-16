@@ -9,6 +9,7 @@ local lspconfig = require "lspconfig"
 -- e.g. "pyright". Use complete configuration if using separate settings.
 local servers = {
   "gopls",
+  "clangd",
 }
 
 for _, lsp in ipairs(servers) do
