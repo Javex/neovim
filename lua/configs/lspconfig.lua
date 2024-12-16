@@ -10,6 +10,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "gopls",
   "clangd",
+  "terraformls",
 }
 
 for _, lsp in ipairs(servers) do

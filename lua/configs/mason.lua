@@ -27,6 +27,9 @@ local options = {
 
     -- C++
     "clangd",
+
+    -- Terraform
+    "terraform-ls",
   },
 }
 
