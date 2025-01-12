@@ -36,3 +36,8 @@ vim.filetype.add {
 -- Spellchecking
 vim.opt.spelllang = "en_gb"
 vim.opt.spell = true
+
+-- Import vimscript
+local current_file = debug.getinfo(1, "S").source:sub(2) -- Get the current file's path
+local current_dir = vim.fn.fnamemodify(current_file, ":h") -- Get the directory
+vim.cmd("source " .. current_dir .. "/vimscript/helm.vim")

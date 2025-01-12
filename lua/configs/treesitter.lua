@@ -22,6 +22,9 @@ local options = {
 
     -- Bazel
     "starlark",
+
+    -- Kubernetes
+    "helm",
   },
 }
 return options

@@ -11,6 +11,7 @@ local servers = {
   "gopls",
   "clangd",
   "terraformls",
+  "helm_ls",
 }
 
 for _, lsp in ipairs(servers) do

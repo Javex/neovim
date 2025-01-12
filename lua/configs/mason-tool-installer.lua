@@ -30,6 +30,9 @@ local options = {
 
     -- Terraform
     "terraform-ls",
+
+    -- Kubernetes
+    "helm-ls",
   },
 }
 
