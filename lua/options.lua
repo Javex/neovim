@@ -30,6 +30,7 @@ vim.filetype.add {
   extension = {
     Caddyfile = "caddyfile",
     tera = "html",
+    tf = "terraform",
   },
   filename = {
     [".djlintrc"] = "json",
