@@ -1,11 +1,18 @@
 local options = {
+  indent = {
+    disable = {
+      "yaml",
+    },
+  },
   ensure_installed = {
     -- defaults
     "vim",
     "lua",
 
     -- config file languages
-    "yaml",
+    -- YAML is disabled for now because it's auto-indentation is a bit buggy
+    -- https://github.com/nvim-treesitter/nvim-treesitter/issues/5653
+    -- "yaml",
 
     -- Programming languages
     "python",
