@@ -63,7 +63,3 @@ lspconfig.pyright.setup {
     },
   },
 }
-
-lspconfig.omnisharp.setup {
-  cmd = { "dotnet", "/home/flozza/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
-}

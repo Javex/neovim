@@ -18,7 +18,6 @@ local options = {
     "python",
     "go",
     "rust",
-    "c_sharp",
     "c",
 
     -- HCL / Terraform

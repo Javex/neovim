@@ -19,9 +19,6 @@ local options = {
     -- Golang
     "gopls",
 
-    -- C#
-    "omnisharp",
-
     -- HTML
     "djlint",
 

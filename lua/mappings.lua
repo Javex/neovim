@@ -71,21 +71,6 @@ map("n", "<leader>dO", function()
   require("dapui").toggle()
 end, { desc = "Debug Toggle DAP UI Explicitly" })
 
--- C# / Omnisharp
--- See https://github.com/Hoffs/omnisharp-extended-lsp.nvim
-map("n", "gd", function()
-  require("omnisharp_extended").lsp_definition()
-end, { desc = "Omnisharp Go to definition" })
-map("n", "<leader>D", function()
-  require("omnisharp_extended").lsp_type_definition()
-end, { desc = "Omnisharp Go to type definition" })
-map("n", "gr", function()
-  require("omnisharp_extended").lsp_references()
-end, { desc = "Omnisharp Go to references" })
-map("n", "gi", function()
-  require("omnisharp_extended").lsp_implementation()
-end, { desc = "Omnisharp Go to implementation" })
-
 -- Copilot
 map("i", "<C-J>", "copilot#Accept('\\<CR>')", {
   expr = true,

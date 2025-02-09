@@ -196,15 +196,6 @@ local plugins = {
     },
   },
 
-  -- Omnisharp extended
-  {
-    "Hoffs/omnisharp-extended-lsp.nvim",
-    event = {
-      "BufRead *.cs",
-      "BufNewFile *.cs",
-    },
-  },
-
   -- neoconf
   {
     "folke/neoconf.nvim",
