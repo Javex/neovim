@@ -28,6 +28,15 @@ map("n", "<leader>P", '"+P', { desc = "Clipboard Paste but line above" })
 map("n", "<leader>X", function()
   require("nvchad.tabufline").closeAllBufs()
 end, { desc = "buffer close ALL" })
+-- Move between nvim tabs (small number in the top right).
+-- These "tabs" are more like "windows" and the tabufline above handles
+-- "buffers" and displays them more like tabs at the top.
+-- Switch between tabs
+map("n", "<leader><Tab>", function()
+  vim.cmd ":tabNext"
+end, {
+  desc = "Next Tab",
+})
 
 -- LSP config
 map("n", "<leader>lf", function()

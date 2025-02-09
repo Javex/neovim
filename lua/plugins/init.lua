@@ -212,6 +212,19 @@ local plugins = {
     end,
   },
 
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+      "hrsh7th/nvim-cmp",
+    },
+    opts = function()
+      return require "configs.noice"
+    end,
+  },
+
   -- AI Coding assistant
   -- This plugin is deliberately only loaded with the :Copilot command. If it
   -- were to auto-load it would always send all code up to the cloud which
