@@ -11,6 +11,9 @@ require "nvchad.options"
 -- explicitly via the <leader> key
 vim.opt.clipboard = ""
 
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
+
 -- Configure a line at 80 characters and set text width to 79 which auto-wraps
 -- after that line length.
 vim.cmd [[set colorcolumn=+1]]
