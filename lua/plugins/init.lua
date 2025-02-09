@@ -133,6 +133,7 @@ local plugins = {
     main = "dapui",
     dependencies = {
       "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
     },
     config = function()
       local dap, dapui = require "dap", require "dapui"
@@ -187,7 +188,6 @@ local plugins = {
   },
 
   -- Caddyfile
-  { "nvim-neotest/nvim-nio" },
   {
     "isobit/vim-caddyfile",
     event = {
