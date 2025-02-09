@@ -86,6 +86,13 @@ map("n", "gi", function()
   require("omnisharp_extended").lsp_implementation()
 end, { desc = "Omnisharp Go to implementation" })
 
+-- Copilot
+map("i", "<C-J>", "copilot#Accept('\\<CR>')", {
+  expr = true,
+  replace_keycodes = false,
+  desc = "Copilot Accept",
+})
+
 -- Remove key maps
 -- Uncomment to use nomap function
 -- local nomap = vim.keymap.del

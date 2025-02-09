@@ -228,6 +228,18 @@ local plugins = {
       return require "configs.cmp"
     end,
   },
+
+  -- AI Coding assistant
+  -- This plugin is deliberately only loaded with the :Copilot command. If it
+  -- were to auto-load it would always send all code up to the cloud which
+  -- isn't great. By enabling it explicitly, it only does that for the current
+  -- workspace.
+  {
+    "github/copilot.vim",
+    cmd = {
+      "Copilot",
+    },
+  },
 }
 
 return plugins
