@@ -86,6 +86,9 @@ map("i", "<C-J>", "copilot#Accept('\\<CR>')", {
   replace_keycodes = false,
   desc = "Copilot Accept",
 })
+map("i", "<C-I>", "<Plug>(copilot-accept-word)", {
+  desc = "Copilot Accept Word",
+})
 
 -- Remove key maps
 -- Uncomment to use nomap function
