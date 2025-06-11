@@ -30,6 +30,9 @@ local options = {
 
     -- Kubernetes
     "helm-ls",
+
+    -- Markdown
+    "mdformat", -- Formatter
   },
 }
 
