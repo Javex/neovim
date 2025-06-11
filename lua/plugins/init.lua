@@ -47,6 +47,7 @@ local plugins = {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = require "configs.mason-tool-installer",
     dependencies = { "williamboman/mason.nvim" },
+    lazy = false,
   },
   {
     "stevearc/conform.nvim",
