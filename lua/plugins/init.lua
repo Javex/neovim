@@ -218,6 +218,22 @@ local plugins = {
     end,
   },
 
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "codecompanion" }
+  },
+
+  {
+    "echasnovski/mini.diff",
+    config = function()
+      local diff = require("mini.diff")
+      diff.setup({
+        -- Disabled by default
+        source = diff.gen_source.none(),
+      })
+    end,
+  },
+
   -- AI Coding assistant
   -- This plugin is deliberately only loaded with the :Copilot command. If it
   -- were to auto-load it would always send all code up to the cloud which
@@ -229,6 +245,21 @@ local plugins = {
       "Copilot",
     },
   },
+
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "github/copilot.vim",
+      "echasnovski/mini.diff",
+      "MeanderingProgrammer/render-markdown.nvim",
+    },
+    cmd = {
+      "CodeCompanionChat"
+    }
+  }
 }
 
 return plugins
