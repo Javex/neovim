@@ -20,18 +20,29 @@ require("lazy").setup({
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
+    cond = function() return not vim.g.vscode end,
   },
 
-  { import = "plugins" },
+  {
+    import = "plugins",
+    cond = function() return not vim.g.vscode end,
+  },
 }, lazy_config)
 
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+if not vim.g.vscode then
+  -- load theme
+  dofile(vim.g.base46_cache .. "defaults")
+  dofile(vim.g.base46_cache .. "statusline")
 
-require "options"
-require "nvchad.autocmds"
+  require "options"
+  require "nvchad.autocmds"
+end
 
 vim.schedule(function()
   require "mappings"
 end)
+
+if vim.g.vscode then
+  -- Use VS Code clipboard provider
+  vim.g.clipboard = vim.g.vscode_clipboard
+end
