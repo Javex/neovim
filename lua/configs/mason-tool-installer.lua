@@ -36,6 +36,7 @@ local options = {
 
     -- TypeScript / JavaScript / NodeJS
     "typescript-language-server",
+    "prettier", -- Formatter
   },
 }
 
