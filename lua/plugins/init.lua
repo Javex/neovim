@@ -1,3 +1,11 @@
+local function set_theme(name)
+  local chadrc = require "chadrc"
+  local cur_theme = chadrc.base46.theme
+  require("nvchad.utils").replace_word('theme = "' .. cur_theme, 'theme = "' .. name)
+  require('nvconfig').base46.theme = name
+  require('base46').load_all_highlights()
+end
+
 local plugins = {
   -- Treesitter handles parsing & syntax highlighting
   {
@@ -24,6 +32,20 @@ local plugins = {
 
       telescope.load_extension "ui-select"
     end,
+  },
+
+  {
+    "f-person/auto-dark-mode.nvim",
+    lazy = false,
+    config = {
+      update_interval = 1000,
+      set_dark_mode = function()
+        set_theme('solarized_dark')
+      end,
+      set_light_mode = function()
+        set_theme('solarized_light')
+      end,
+    },
   },
 
   {
