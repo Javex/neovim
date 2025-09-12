@@ -12,6 +12,7 @@ local servers = {
   "clangd",
   "terraformls",
   "helm_ls",
+  "ts_ls", -- Typescript
 }
 
 for _, lsp in ipairs(servers) do

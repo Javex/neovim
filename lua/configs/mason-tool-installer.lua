@@ -33,6 +33,9 @@ local options = {
 
     -- Markdown
     "mdformat", -- Formatter
+
+    -- TypeScript / JavaScript / NodeJS
+    "typescript-language-server",
   },
 }
 
