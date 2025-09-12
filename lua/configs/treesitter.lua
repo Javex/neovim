@@ -25,6 +25,7 @@ local options = {
     "go",
     "rust",
     "c",
+    "typescript",
 
     -- HCL / Terraform
     "hcl",
