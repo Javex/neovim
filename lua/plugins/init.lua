@@ -218,6 +218,15 @@ local plugins = {
     end,
   },
 
+  -- From https://github.com/L3MON4D3/LuaSnip/issues/1071
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    -- build = "make install_jsregexp"
+  },
+
   {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown", "codecompanion" }
