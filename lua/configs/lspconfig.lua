@@ -4,7 +4,6 @@ local nvlsp = require "nvchad.configs.lspconfig"
 local on_attach = nvlsp.on_attach
 local capabilities = nvlsp.capabilities
 
-local lspconfig = require "lspconfig"
 -- Add LSP servers here if using default configuration, just a simple string,
 -- e.g. "pyright". Use complete configuration if using separate settings.
 local servers = {
@@ -16,13 +15,13 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
 end
 
-lspconfig.rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -39,9 +38,9 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
-}
+})
 
-lspconfig.ansiblels.setup {
+vim.lsp.config('ansiblels', {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -51,9 +50,9 @@ lspconfig.ansiblels.setup {
       },
     },
   },
-}
+})
 
-lspconfig.pyright.setup {
+vim.lsp.config('pyright', {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -63,4 +62,4 @@ lspconfig.pyright.setup {
       },
     },
   },
-}
+})
