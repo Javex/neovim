@@ -34,19 +34,36 @@ local plugins = {
     end,
   },
 
-  {
-    "f-person/auto-dark-mode.nvim",
-    lazy = false,
-    config = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        set_theme('solarized_dark')
-      end,
-      set_light_mode = function()
-        set_theme('solarized_light')
-      end,
-    },
-  },
+  -- Disabled for now because the implementation currently causes a high system
+  -- load due to polling every second for each open neovim instance. In
+  -- addition, a memory leak in xdg-desktop-portal is triggered by this and the
+  -- polling makes it worse.
+  --
+  -- Memory leak report
+  -- - https://github.com/flatpak/xdg-desktop-portal/issues/1416
+  --
+  -- PR that implements monitoring instead of polling
+  -- - https://github.com/f-person/auto-dark-mode.nvim/pull/63
+  --
+  -- Bug report for xdg-desktop-portal running out of memory due to plugin:
+  -- - https://github.com/f-person/auto-dark-mode.nvim/issues/64
+  --
+  -- Once there's a resolution that ensure the high load and memory leak are
+  -- fixed (i.e. new xdg-desktop-portal version and PR merged), this can be
+  -- re-enabled.
+  -- {
+  --   "f-person/auto-dark-mode.nvim",
+  --   lazy = false,
+  --   config = {
+  --     update_interval = 1000,
+  --     set_dark_mode = function()
+  --       set_theme('solarized_dark')
+  --     end,
+  --     set_light_mode = function()
+  --       set_theme('solarized_light')
+  --     end,
+  --   },
+  -- },
 
   {
     -- A nicer UI for vim.ui calls
