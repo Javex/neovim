@@ -19,6 +19,7 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     capabilities = capabilities,
   })
+  vim.lsp.enable(lsp)
 end
 
 vim.lsp.config('rust_analyzer', {
@@ -39,6 +40,7 @@ vim.lsp.config('rust_analyzer', {
     },
   },
 })
+vim.lsp.enable('rust_analyzer')
 
 vim.lsp.config('ansiblels', {
   on_attach = on_attach,
@@ -51,6 +53,7 @@ vim.lsp.config('ansiblels', {
     },
   },
 })
+vim.lsp.enable('ansiblels')
 
 vim.lsp.config('pyright', {
   on_attach = on_attach,
@@ -63,3 +66,4 @@ vim.lsp.config('pyright', {
     },
   },
 })
+vim.lsp.enable('pyright')
