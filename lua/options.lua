@@ -34,6 +34,10 @@ vim.filetype.add {
   },
   filename = {
     [".djlintrc"] = "json",
+    -- Renovate treats these files as JSONC (JSON with Comments). By setting
+    -- this file type explicitly it allows editing the file with neovim and
+    -- getting correct syntax highlighting even if there's comments.
+    ["renovate.json"] = "jsonc",
   },
 }
 
@@ -42,6 +46,6 @@ vim.opt.spelllang = "en_gb"
 vim.opt.spell = true
 
 -- Import vimscript
-local current_file = debug.getinfo(1, "S").source:sub(2) -- Get the current file's path
+local current_file = debug.getinfo(1, "S").source:sub(2)   -- Get the current file's path
 local current_dir = vim.fn.fnamemodify(current_file, ":h") -- Get the directory
 vim.cmd("source " .. current_dir .. "/vimscript/helm.vim")
