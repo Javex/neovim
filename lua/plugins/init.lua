@@ -236,11 +236,6 @@ local plugins = {
   },
 
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = { "markdown", "codecompanion" }
-  },
-
-  {
     "echasnovski/mini.diff",
     config = function()
       local diff = require("mini.diff")
