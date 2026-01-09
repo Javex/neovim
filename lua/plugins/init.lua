@@ -142,6 +142,10 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function()
+      -- This file needs to be something other than "dap", otherwise a linter
+      -- error triggers because it conflicts with the external "dap" module, I
+      -- think.
+      require("configs.dapconfig")
       -- Configure look of breakpoints in sign sidebar
       -- Needs a nerd font or similar
       vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
