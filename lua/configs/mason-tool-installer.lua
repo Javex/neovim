@@ -5,7 +5,10 @@ local options = {
 
     -- Ansible
     "ansible-language-server",
-    "ansible-lint",
+    -- Don't install ansible-lint using Mason, it should be available from a
+    -- virtual environment before launching nvim. Otherwise the versions get
+    -- out of sync and weird behaviour appears.
+    -- "ansible-lint",
 
     -- Python
     "pyright",
