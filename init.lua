@@ -247,6 +247,8 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+require 'options'
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
