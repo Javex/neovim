@@ -4,10 +4,10 @@ return { -- Autoformat
   cmd = { 'ConformInfo' },
   keys = {
     {
-      '<leader>f',
+      '<leader>fm',
       function() require('conform').format { async = true, lsp_format = 'fallback' } end,
       mode = '',
-      desc = '[F]ormat buffer',
+      desc = '[F]ormat [m]y buffer',
     },
   },
   opts = {
@@ -28,11 +28,23 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      rust = { 'rustfmt' },
+      caddyfile = { 'caddy' },
+      go = { 'gofmt' },
+      html = { 'djlint' },
+      python = { 'ruff_format' },
+      tf = { 'terraform_fmt' },
+      markdown = { 'mdformat' },
+      ['terraform-vars'] = { 'terraform_fmt' },
+      typescript = { 'prettier' },
+      yaml = { 'prettier' },
+    },
+    formatters = {
+      caddy = {
+        command = 'caddy',
+        args = { 'fmt', '-' },
+        exit_codes = { 0, 1 },
+      },
     },
   },
 }
