@@ -226,6 +226,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 
+-- Clipboard
+vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = 'Clipboard Yank' })
+vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Clipboard Paste' })
+vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Clipboard Paste but line above' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
