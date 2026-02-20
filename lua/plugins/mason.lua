@@ -1,6 +1,9 @@
 return {
   {
     'mason-org/mason.nvim',
+    -- Empty options are necessary as otherwise the setup function won't be
+    -- called.
+    opts = {},
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
