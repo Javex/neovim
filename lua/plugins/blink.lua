@@ -70,7 +70,7 @@ return { -- Autocompletion
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets' },
+      default = { 'lsp', 'buffer', 'path', 'snippets' },
     },
 
     snippets = { preset = 'luasnip' },
