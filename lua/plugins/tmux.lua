@@ -1,5 +1,8 @@
 return {
   'christoomey/vim-tmux-navigator',
+  -- Empty options are necessary as otherwise the setup function won't be
+  -- called.
+  opts = {},
   cmd = {
     'TmuxNavigateLeft',
     'TmuxNavigateDown',
