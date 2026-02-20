@@ -130,6 +130,7 @@ vim.o.smartcase = true
 vim.o.signcolumn = 'yes'
 
 -- Decrease update time
+-- Also used by gitsigns
 vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
