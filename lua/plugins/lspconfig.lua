@@ -46,6 +46,15 @@ return
         --  For example, in C this would take you to the header.
         map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+        -- TODO: Merge this LSP config with the Telescope config that does
+        -- pretty much the same in ./telescope.lua (around line 90)
+        -- LSP config
+        map('n', '<leader>lf', function() vim.diagnostic.open_float { border = 'rounded' } end, { desc = '[L]SP Floating diagnostic' })
+        map('n', '<leader>lh', function() vim.lsp.buf.hover() end, { desc = '[L]SP [H]over Symbol Information' })
+        map('n', '<leader>li', function() vim.lsp.buf.implementation() end, { desc = '[L]SP [I]mplementation List' })
+        map('n', '<leader>lc', function() vim.lsp.buf.incoming_calls() end, { desc = 'LSP Call List' })
+        map('n', '<leader>lr', function() vim.lsp.buf.references() end, { desc = 'LSP Reference List' })
+
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
         --    See `:help CursorHold` for information about when this is executed

@@ -88,6 +88,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
     -- it is better explained there). This allows easily switching between pickers if you prefer using something else!
+    -- TODO: Merge this Telescope config with the LSP config in ./lspconfig.lua
+    -- which sets up similar shortcuts around line 50. I don't yet fully
+    -- understand what the difference is between the Telescope and LSP
+    -- commands. What's the benefit of Telescope here over using the LSP
+    -- functions?
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
       callback = function(event)
