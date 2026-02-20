@@ -126,13 +126,13 @@ return
     })
 
     -- Override default behavior and theme when searching
-    vim.keymap.set('n', '<leader>/', function()
+    vim.keymap.set('n', '<leader>fg', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
         previewer = false,
       })
-    end, { desc = '[/] Fuzzily search in current buffer' })
+    end, { desc = '[F]ind fuzzy [G]rep in current buffer' })
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
