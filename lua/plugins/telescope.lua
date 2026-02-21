@@ -82,7 +82,20 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
     vim.keymap.set({ 'n', 'v' }, '<leader>fh', builtin.grep_string, { desc = '[F]ind current [W]ord' })
     vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = '[F]ind [W]ords by grep' })
-    vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+
+    -- NOTE: This function limits diagnostics based on the root dir if it can
+    -- find one. This probably won't work for everything, e.g. NodeJS has
+    -- `node_modules`. If that happens, I'll deal with it.
+    vim.keymap.set('n', '<leader>fd', function()
+      local get_root_dir = require('lspconfig').util.root_pattern '.git'
+      local root_dir = get_root_dir()
+      if root_dir ~= nil then
+        builtin.diagnostics { root_dir = root_dir }
+      else
+        builtin.diagnostics()
+      end
+    end, { desc = '[F]ind [D]iagnostics' })
+
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
     vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[F]ind [O]ld Files (recent)' })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
