@@ -101,6 +101,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 
+    -- Git Telescope
+    vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = '[G]it [C]ommits' })
+    vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
+
     -- When an LSP attaches, this defines shortcuts that open teleport for LSP
     -- actions (e.g. go to references). This is in contrast to my previous
     -- approach of using LSP actions directly. With this, telescope opens up,
