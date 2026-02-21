@@ -39,6 +39,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 
+-- Close buffers
+vim.keymap.set('n', '<leader>x', function()
+  local current_buf = vim.api.nvim_get_current_buf()
+  vim.pai.nvim_buf_delete(current_buf, { force = false })
+end, { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>X', function()
+  local current_buf = vim.api.nvim_get_current_buf()
+  local listed_buffers = vim.api.nvim_list_bufs()
+  for _, buf in ipairs(listed_buffers) do
+    vim.api.nvim_buf_delete(buf, { force = false })
+  end
+end, { desc = 'Close all buffers' })
+
 -- Clipboard
 vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = 'Clipboard Yank' })
 vim.keymap.set({ 'v', 'n' }, '<leader>d', '"+d', { desc = 'Clipboard Cut' })
