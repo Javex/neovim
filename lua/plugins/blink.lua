@@ -1,5 +1,7 @@
 return { -- Autocompletion
   'saghen/blink.cmp',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   event = 'VimEnter',
   version = '1.*',
   dependencies = {

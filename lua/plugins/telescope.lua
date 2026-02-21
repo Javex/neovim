@@ -1,6 +1,8 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   dependencies = {
     'nvim-lua/plenary.nvim',
     { -- If encountering errors, see telescope-fzf-native README for installation instructions

@@ -1,12 +1,16 @@
 return {
   {
     'mason-org/mason.nvim',
+    -- Disable in VSCode unless you know you need it and it works
+    enabled = not vim.g.vscode,
     -- Empty options are necessary as otherwise the setup function won't be
     -- called.
     opts = {},
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    -- Disable in VSCode unless you know you need it and it works
+    enabled = not vim.g.vscode,
     opts = {
       ensure_installed = {
         -- Lua

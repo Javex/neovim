@@ -1,5 +1,7 @@
 return { -- Collection of various small independent plugins/modules
   'nvim-mini/mini.nvim',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   config = function()
     -- Better Around/Inside textobjects
     --

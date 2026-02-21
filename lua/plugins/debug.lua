@@ -1,5 +1,7 @@
 return {
   'mfussenegger/nvim-dap',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI

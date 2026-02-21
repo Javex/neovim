@@ -1,5 +1,7 @@
 return {
   'rmagatti/auto-session',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   lazy = false,
 
   ---enables autocomplete for opts

@@ -1,5 +1,7 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
   keys = {

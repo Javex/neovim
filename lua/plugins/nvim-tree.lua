@@ -1,5 +1,7 @@
 return {
   'nvim-tree/nvim-tree.lua',
+  -- VSCode has its own file tree
+  enabled = not vim.g.vscode,
   cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
   keys = {
     { '<C-n>', '<cmd>NvimTreeToggle<CR>', desc = 'nvimtree toggle window' },

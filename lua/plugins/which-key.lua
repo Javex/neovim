@@ -14,6 +14,8 @@ return
 -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 { -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   event = 'VimEnter',
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)

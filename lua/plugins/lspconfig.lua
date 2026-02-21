@@ -3,6 +3,8 @@ return
 {
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   dependencies = {
     -- Useful status updates for LSP.
     {

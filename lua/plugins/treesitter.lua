@@ -1,5 +1,7 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  -- Disable in VSCode unless you know you need it and it works
+  enabled = not vim.g.vscode,
   config = function()
     local filetypes = {
       -- defaults
