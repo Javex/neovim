@@ -41,5 +41,6 @@ vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true }
 
 -- Clipboard
 vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = 'Clipboard Yank' })
+vim.keymap.set({ 'v', 'n' }, '<leader>d', '"+d', { desc = 'Clipboard Cut' })
 vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Clipboard Paste' })
 vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Clipboard Paste but line above' })
