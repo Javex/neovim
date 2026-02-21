@@ -33,6 +33,21 @@ local check_external_reqs = function()
   return true
 end
 
+local check_debugger = function()
+  local debug_map = {
+    ['🦀 Rust'] = 'rust-gdb',
+    [' Go'] = 'delve',
+    ['🐍 Python'] = 'debugpy',
+  }
+  for lang, exe in pairs(debug_map) do
+    if vim.fn.executable(exe) == 1 then
+      vim.health.ok(string.format("%s Debugger found: '%s'", lang, exe))
+    else
+      vim.health.warn(string.format("%s Debugger NOT found: '%s'", lang, exe))
+    end
+  end
+end
+
 return {
   check = function()
     vim.health.start 'kickstart.nvim'
@@ -48,5 +63,6 @@ return {
 
     check_version()
     check_external_reqs()
+    check_debugger()
   end,
 }
