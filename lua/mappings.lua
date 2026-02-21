@@ -10,15 +10,19 @@ vim.keymap.set({ 'v', 'n' }, '<leader>d', '"+d', { desc = 'Clipboard Cut' })
 vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Clipboard Paste' })
 vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Clipboard Paste but line above' })
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Toggle Comments in normal & visual mode
+vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
+vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
+
 -- [[ Neovim Shortcuts ]]
 -- These shortcuts only work in a proper Neovim instance, not in VSCode
 if not vim.g.vscode then
   -- TODO: Look into nvchad mappings I want to keep
   -- require 'nvchad.mappings'
-
-  -- Clear highlights on search when pressing <Esc> in normal mode
-  --  See `:help hlsearch`
-  vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -44,9 +48,6 @@ if not vim.g.vscode then
   -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
   -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
-
-  vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
-  vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 
   -- Close buffers
   vim.keymap.set('n', '<leader>x', function()
