@@ -52,6 +52,15 @@ vim.keymap.set('n', '<leader>X', function()
   end
 end, { desc = 'Close all buffers' })
 
+-- Tab movement
+-- Neovim "tabs" are more like "windows" (or "layouts").
+vim.keymap.set('n', '<leader><Tab>', '<cmd>tabnext<CR>', {
+  desc = 'Next Tab',
+})
+vim.keymap.set('n', '<leader><S-Tab>', '<cmd>tabprevious<CR>', {
+  desc = 'Previous Tab',
+})
+
 -- Clipboard
 vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = 'Clipboard Yank' })
 vim.keymap.set({ 'v', 'n' }, '<leader>d', '"+d', { desc = 'Clipboard Cut' })
