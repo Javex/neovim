@@ -86,13 +86,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 
-    -- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
-    -- it is better explained there). This allows easily switching between pickers if you prefer using something else!
-    -- TODO: Merge this Telescope config with the LSP config in ./lspconfig.lua
-    -- which sets up similar shortcuts around line 50. I don't yet fully
-    -- understand what the difference is between the Telescope and LSP
-    -- commands. What's the benefit of Telescope here over using the LSP
-    -- functions?
+    -- When an LSP attaches, this defines shortcuts that open teleport for LSP
+    -- actions (e.g. go to references). This is in contrast to my previous
+    -- approach of using LSP actions directly. With this, telescope opens up,
+    -- allowing to search and navigate right there. If I then want them in the
+    -- quick-fix list, pressing <C-Q> sends it there.
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
       callback = function(event)
