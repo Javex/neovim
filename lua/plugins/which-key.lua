@@ -17,6 +17,9 @@ return
   -- Disable in VSCode unless you know you need it and it works
   enabled = not vim.g.vscode,
   event = 'VimEnter',
+  keys = {
+    { '<leader>wk', '<cmd>WhichKey <CR>', desc = 'whichkey all keymaps' },
+  },
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)
     delay = 0,
