@@ -13,6 +13,10 @@ return {
     enabled = not vim.g.vscode,
     opts = {
       ensure_installed = {
+        -- Treesitter
+        -- This is required for treesitter to compile languages
+        'tree-sitter-cli',
+
         -- Lua
         'lua-language-server',
         'stylua',
