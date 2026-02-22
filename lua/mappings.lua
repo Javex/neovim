@@ -18,6 +18,13 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 
+-- Quick helpers to run lua code. Great if you don't want to restart Neovim
+-- just to test a command, but also helpful to write a quick snippet and run
+-- it.
+-- Source: https://www.youtube.com/watch?v=ooTcnx066Do
+vim.keymap.set('n', '<leader>x', ':.lua<CR>', { desc = 'Run as lua' })
+vim.keymap.set('v', '<leader>x', ':lua<CR>', { desc = 'Run highlight as lua' })
+
 -- [[ Neovim Shortcuts ]]
 -- These shortcuts only work in a proper Neovim instance, not in VSCode
 if not vim.g.vscode then
@@ -50,17 +57,17 @@ if not vim.g.vscode then
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
   -- Close buffers
-  vim.keymap.set('n', '<leader>x', function()
+  vim.keymap.set('n', '<leader>bx', function()
     local current_buf = vim.api.nvim_get_current_buf()
     vim.pai.nvim_buf_delete(current_buf, { force = false })
-  end, { desc = 'Close current buffer' })
-  vim.keymap.set('n', '<leader>X', function()
+  end, { desc = '[b]uffer Close Current [x]' })
+  vim.keymap.set('n', '<leader>bX', function()
     local current_buf = vim.api.nvim_get_current_buf()
     local listed_buffers = vim.api.nvim_list_bufs()
     for _, buf in ipairs(listed_buffers) do
       vim.api.nvim_buf_delete(buf, { force = false })
     end
-  end, { desc = 'Close all buffers' })
+  end, { desc = '[b]uffer Close All [X]' })
 
   -- Tab movement
   -- Neovim "tabs" are more like "windows" (or "layouts").
