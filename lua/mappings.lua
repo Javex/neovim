@@ -59,7 +59,7 @@ if not vim.g.vscode then
   -- Close buffers
   vim.keymap.set('n', '<leader>bx', function()
     local current_buf = vim.api.nvim_get_current_buf()
-    vim.pai.nvim_buf_delete(current_buf, { force = false })
+    vim.api.nvim_buf_delete(current_buf, { force = false })
   end, { desc = '[b]uffer Close Current [x]' })
   vim.keymap.set('n', '<leader>bX', function()
     local current_buf = vim.api.nvim_get_current_buf()
