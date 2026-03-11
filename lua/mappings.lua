@@ -62,7 +62,6 @@ if not vim.g.vscode then
     vim.api.nvim_buf_delete(current_buf, { force = false })
   end, { desc = '[b]uffer Close Current [x]' })
   vim.keymap.set('n', '<leader>bX', function()
-    local current_buf = vim.api.nvim_get_current_buf()
     local listed_buffers = vim.api.nvim_list_bufs()
     for _, buf in ipairs(listed_buffers) do
       vim.api.nvim_buf_delete(buf, { force = false })
