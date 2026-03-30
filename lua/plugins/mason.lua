@@ -15,7 +15,12 @@ return {
       ensure_installed = {
         -- Treesitter
         -- This is required for treesitter to compile languages
-        'tree-sitter-cli',
+        -- NOTE: Not installed here via Mason because it doesn't work on e.g.
+        -- Ubuntu 22.04. Instead, Neovim expects the CLI to be installed from
+        -- the outside using the OS or Cargo manually.
+        -- This should be managed in the ansible role:
+        -- https://github.com/Javex/ansible-collection/tree/main/roles/neovim/tasks
+        -- 'tree-sitter-cli',
 
         -- Lua
         'lua-language-server',
