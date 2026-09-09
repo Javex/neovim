@@ -38,6 +38,7 @@ return { -- Autoformat
       tf = { 'terraform_fmt' },
       markdown = { 'mdformat' },
       ['terraform-vars'] = { 'terraform_fmt' },
+      hcl = { 'hcl' },
       typescript = { 'prettier' },
       yaml = { 'prettier' },
     },

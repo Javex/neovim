@@ -53,6 +53,7 @@ return {
 
         -- Terraform
         'terraform-ls',
+        'hclfmt',
 
         -- Kubernetes
         'helm-ls',
